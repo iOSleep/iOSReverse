@@ -12,9 +12,14 @@
 		229F8BAA2031704800761A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229F8BA82031704800761A23 /* Main.storyboard */; };
 		229F8BAC2031704800761A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229F8BAB2031704800761A23 /* Assets.xcassets */; };
 		229F8BAF2031704800761A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229F8BAD2031704800761A23 /* LaunchScreen.storyboard */; };
+		229F8BBF203187E200761A23 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F8BBE203187E200761A23 /* Configuration.swift */; };
+		229F8BC22031888E00761A23 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F8BC12031888E00761A23 /* Category.swift */; };
+		229F8BC52031892C00761A23 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F8BC42031892C00761A23 /* APIManager.swift */; };
+		DC2643D7EA5EBA564EEBF601 /* Pods_iOSReverse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170F3B5468EECEA171322A00 /* Pods_iOSReverse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170F3B5468EECEA171322A00 /* Pods_iOSReverse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSReverse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		229F8BA12031704800761A23 /* iOSReverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSReverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229F8BA42031704800761A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229F8BA62031704800761A23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,11 @@
 		229F8BAB2031704800761A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		229F8BAE2031704800761A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229F8BB02031704800761A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		229F8BBE203187E200761A23 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		229F8BC12031888E00761A23 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		229F8BC42031892C00761A23 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5F1D6A1A93CF1A2EFFE85BF3 /* Pods-iOSReverse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSReverse.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSReverse/Pods-iOSReverse.release.xcconfig"; sourceTree = "<group>"; };
+		6F73DA402C89E905FB2E0E8B /* Pods-iOSReverse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSReverse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSReverse/Pods-iOSReverse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2643D7EA5EBA564EEBF601 /* Pods_iOSReverse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12C79A319CC4AD4BFD2D6CEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F73DA402C89E905FB2E0E8B /* Pods-iOSReverse.debug.xcconfig */,
+				5F1D6A1A93CF1A2EFFE85BF3 /* Pods-iOSReverse.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		16292D57BC0BA96DAE980E29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				170F3B5468EECEA171322A00 /* Pods_iOSReverse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		229F8B982031704800761A23 = {
 			isa = PBXGroup;
 			children = (
 				229F8BA32031704800761A23 /* iOSReverse */,
 				229F8BA22031704800761A23 /* Products */,
+				12C79A319CC4AD4BFD2D6CEB /* Pods */,
+				16292D57BC0BA96DAE980E29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +84,73 @@
 		229F8BA32031704800761A23 /* iOSReverse */ = {
 			isa = PBXGroup;
 			children = (
-				229F8BA42031704800761A23 /* AppDelegate.swift */,
+				229F8BC32031891E00761A23 /* Manager */,
+				229F8BC02031887D00761A23 /* Models */,
+				229F8BBD203187CC00761A23 /* Configuration */,
+				229F8BBC2031839900761A23 /* Delegate */,
+				229F8BBB2031839700761A23 /* Resources */,
+				229F8BBA2031839500761A23 /* StoryBoard */,
+				229F8BB92031839200761A23 /* SupportingFiles */,
 				229F8BA62031704800761A23 /* ViewController.swift */,
-				229F8BA82031704800761A23 /* Main.storyboard */,
-				229F8BAB2031704800761A23 /* Assets.xcassets */,
-				229F8BAD2031704800761A23 /* LaunchScreen.storyboard */,
-				229F8BB02031704800761A23 /* Info.plist */,
 			);
 			path = iOSReverse;
+			sourceTree = "<group>";
+		};
+		229F8BB92031839200761A23 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BB02031704800761A23 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		229F8BBA2031839500761A23 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BA82031704800761A23 /* Main.storyboard */,
+				229F8BAD2031704800761A23 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		229F8BBB2031839700761A23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BAB2031704800761A23 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		229F8BBC2031839900761A23 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BA42031704800761A23 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		229F8BBD203187CC00761A23 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BBE203187E200761A23 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		229F8BC02031887D00761A23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BC12031888E00761A23 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		229F8BC32031891E00761A23 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				229F8BC42031892C00761A23 /* APIManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 229F8BB32031704800761A23 /* Build configuration list for PBXNativeTarget "iOSReverse" */;
 			buildPhases = (
+				114FF706EBD7F26E8E9A5C39 /* [CP] Check Pods Manifest.lock */,
 				229F8B9D2031704800761A23 /* Sources */,
 				229F8B9E2031704800761A23 /* Frameworks */,
 				229F8B9F2031704800761A23 /* Resources */,
+				1C13168A92B97D54771C277D /* [CP] Embed Pods Frameworks */,
+				8089118A0BE22BEAFE83B91D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +223,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		114FF706EBD7F26E8E9A5C39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSReverse-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C13168A92B97D54771C277D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOSReverse/Pods-iOSReverse-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSReverse/Pods-iOSReverse-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8089118A0BE22BEAFE83B91D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSReverse/Pods-iOSReverse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		229F8B9D2031704800761A23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				229F8BBF203187E200761A23 /* Configuration.swift in Sources */,
 				229F8BA72031704800761A23 /* ViewController.swift in Sources */,
+				229F8BC52031892C00761A23 /* APIManager.swift in Sources */,
 				229F8BA52031704800761A23 /* AppDelegate.swift in Sources */,
+				229F8BC22031888E00761A23 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +425,13 @@
 		};
 		229F8BB42031704800761A23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F73DA402C89E905FB2E0E8B /* Pods-iOSReverse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MBGN3F457N;
-				INFOPLIST_FILE = iOSReverse/Info.plist;
+				INFOPLIST_FILE = iOSReverse/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.iosleep.iOSReverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +442,13 @@
 		};
 		229F8BB52031704800761A23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F1D6A1A93CF1A2EFFE85BF3 /* Pods-iOSReverse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MBGN3F457N;
-				INFOPLIST_FILE = iOSReverse/Info.plist;
+				INFOPLIST_FILE = iOSReverse/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.iosleep.iOSReverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
